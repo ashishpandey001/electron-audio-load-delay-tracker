@@ -40,6 +40,7 @@ export default class Home extends Component {
       if (this.state.isSSPlaying) {
         this.ss = new Howl({
           src: [`${path.dirname(app.getAppPath())}/assets/audio/hdfc_d_s_1_1 - 320.mp3`],
+          html5: true,
           onload: () => {
             loadEndTime = moment();
             loadDiffTime = loadEndTime.diff(loadStartTime);
@@ -65,6 +66,7 @@ export default class Home extends Component {
       if (this.state.isCC128Playing) {
         this.cc128 = new Howl({
           src: [`${path.dirname(app.getAppPath())}/assets/audio/Cosmic Chant - 128.mp3`],
+          html5: true,
           onload: () => {
             loadEndTime = moment();
             loadDiffTime = loadEndTime.diff(loadStartTime);
@@ -90,6 +92,7 @@ export default class Home extends Component {
       if (this.state.isCC320Playing) {
         this.cc320 = new Howl({
           src: [`${path.dirname(app.getAppPath())}/assets/audio/Cosmic Chant - 320.mp3`],
+          html5: true,
           onload: () => {
             loadEndTime = moment();
             loadDiffTime = loadEndTime.diff(loadStartTime);
@@ -115,6 +118,7 @@ export default class Home extends Component {
       if (this.state.isLongTrack128Playing) {
         this.longTrack128 = new Howl({
           src: [`${path.dirname(app.getAppPath())}/assets/audio/long track - 128.mp3`],
+          html5: true,
           onload: () => {
             loadEndTime = moment();
             loadDiffTime = loadEndTime.diff(loadStartTime);
@@ -140,6 +144,7 @@ export default class Home extends Component {
       if (this.state.isLongTrack256Playing) {
         this.longTrack256 = new Howl({
           src: [`${path.dirname(app.getAppPath())}/assets/audio/long track - 256.mp3`],
+          html5: true,
           onload: () => {
             loadEndTime = moment();
             loadDiffTime = loadEndTime.diff(loadStartTime);
@@ -181,7 +186,7 @@ export default class Home extends Component {
           <p id="long-track-128-loadlabel" />
         </div>
         <div className="player">
-          <p>long track - 256</p>
+          <p>long track - 256 using HTML5 Audio API</p>
           <button onClick={this.onLongTrack256PlayStop}>{this.state.isLongTrack256Playing ? 'Stop' : 'Play'}</button>
           <p id="long-track-256-loadlabel" />
         </div>
